@@ -32,8 +32,7 @@ public class Trigger : MonoBehaviour
     {
         itemButton.enabled = false;
         buttonImage.enabled = false;
-
-        
+              
       
     }
 
@@ -53,7 +52,7 @@ public class Trigger : MonoBehaviour
             buttonImage.enabled = true;
 
   
-            btn1.Select(); //auto selects/focus/highlight button
+            btn1.Select(); //focus button
             btn1.onClick.AddListener(ButtonClicked); //if button is clicked calls method "ButtonClicked"
                                
         }
@@ -73,7 +72,7 @@ public class Trigger : MonoBehaviour
             Debug.Log("Button = " + btn1.image.sprite);
         }
 
-        if (itemSlot == "Snakes")
+        if (itemSlot == "Snake")
         {
             btn1.image.sprite = snakeSprite;
             Debug.Log("Button = " + btn1.image.sprite);
@@ -98,7 +97,8 @@ public class Trigger : MonoBehaviour
 
         playerUnit = GameObject.FindGameObjectWithTag("Player");        
         playerInventory = playerUnit.GetComponentInChildren<PlayerInventory>(); // script attached to a CHILD of the main gameobject and containing the variable you want to change        
-        playerInventory.itemPickup = itemSlot; // places the string from "itemslot" into "itemPickup" of the Playerinventory Script
+        //playerInventory.itemPickup = itemSlot; // places the string from "itemslot" into "itemPickup" of the Playerinventory Script
+        playerInventory.playerInventoryList.Add(itemSlot);
         
 
         btn1.onClick.RemoveListener(ButtonClicked); //removes listener to prevent mulitple clicks and bugs??

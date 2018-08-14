@@ -28,7 +28,7 @@ public class ItemDatabase : MonoBehaviour
     private void Start()
     {
         items[0] = "Bomb";
-        items[1] = "Snakes";
+        items[1] = "Snake";
         items[2] = "Acid";
         
 
