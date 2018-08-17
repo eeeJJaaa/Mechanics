@@ -5,10 +5,6 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-    //Vector3 velocity;
-    //public float movespeed = 2f;
-
-
     bool jump = false;
 
 
@@ -56,8 +52,8 @@ public class Movement : MonoBehaviour
         //transform.Translate(velocity * movespeed * Time.deltaTime);
 
 
-        float lh = Input.GetAxisRaw("Horizontal");
-        float lv = Input.GetAxisRaw("Vertical");
+        float lh = Input.GetAxisRaw("HorizontalJ");  //Have switched the gamepad axis to HorizontalJ and VerticalJ and removed them from the standard horizontal/vertical so that only the Dpad
+        float lv = Input.GetAxisRaw("VerticalJ");    //can control the gui (Dpad axis are 6 and 7
 
         Move(lh, lv);
 
@@ -102,6 +98,8 @@ public class Movement : MonoBehaviour
 
         playerRigidBody.MovePosition(transform.position + movement);
 
+        //playerRigidBody.AddForce(movement * speed);
+        
 
         if (lh != 0f || lv != 0f)
         {

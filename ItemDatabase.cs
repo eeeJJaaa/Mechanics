@@ -28,7 +28,7 @@ public class ItemDatabase : MonoBehaviour
     private void Start()
     {
         items[0] = "Bomb";
-        items[1] = "Snakes";
+        items[1] = "Snake";
         items[2] = "Acid";
         
 
@@ -45,7 +45,7 @@ public class ItemDatabase : MonoBehaviour
 
     private void TagList()
     {
-        foreach (GameObject taggedObject in GameObject.FindGameObjectsWithTag("Desk"))
+        foreach (GameObject taggedObject in GameObject.FindGameObjectsWithTag("Interactable"))
         {
 
             gameObjectsList.Add(taggedObject); //adds each tagged GameObject found to list "gameObjects"
