@@ -13,7 +13,7 @@ public class ItemDatabase : MonoBehaviour
 
 
 
-    public string[] items = new string[3]; //array of items that are distributed at the start of the game
+    public string[] items = new string[5]; //array of items that are distributed at the start of the game
     public List<GameObject> gameObjectsList = new List<GameObject>();
 
 
@@ -27,9 +27,12 @@ public class ItemDatabase : MonoBehaviour
     
     private void Start()
     {
-        items[0] = "Bomb";
-        items[1] = "Snakes";
+        items[0] = "Bomb";                              //adds all the different trap types into the "items" array
+        items[1] = "Snake";                             // if you add more traps you need to increase the array up top
         items[2] = "Acid";
+        items[3] = "TripWire";
+        items[4] = "Drone";
+
         
 
 
@@ -45,7 +48,7 @@ public class ItemDatabase : MonoBehaviour
 
     private void TagList()
     {
-        foreach (GameObject taggedObject in GameObject.FindGameObjectsWithTag("Desk"))
+        foreach (GameObject taggedObject in GameObject.FindGameObjectsWithTag("Interactable"))
         {
 
             gameObjectsList.Add(taggedObject); //adds each tagged GameObject found to list "gameObjects"
